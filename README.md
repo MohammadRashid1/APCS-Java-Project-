@@ -25,3 +25,27 @@ A JavaFX-based Student Management System with GUI, login system, dashboard, CRUD
 ```bash
 git clone <https://github.com/MohammadRashid1/APCS-Java-Project-/edit/Data-Files/README.md>
 cd StudentManagementSystem
+
+
+
+REM 1. Navigate to project directory
+cd StudentManagementSystem
+
+REM 2. Compile all Java files
+javac --module-path "C:\path\to\javafx-sdk\lib" ^
+      --add-modules javafx.controls,javafx.fxml ^
+      -cp "lib\*" ^
+      -d out ^
+      src\main\java\com\studentmanagement\**\*.java
+
+REM 3. Create necessary directories
+mkdir data out
+
+REM 4. Copy resource files
+xcopy /E src\main\resources out\
+
+REM 5. Run the application
+java --module-path "C:\path\to\javafx-sdk\lib" ^
+     --add-modules javafx.controls,javafx.fxml ^
+     -cp "out;lib\*" ^
+     com.studentmanagement.Main
