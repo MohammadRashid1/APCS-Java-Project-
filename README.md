@@ -1,4 +1,4 @@
-# APCS-Java-Project-
+# APCS-Java-Project
 Project 
 # Student Management System - APCS Semester 1 Project
 
