@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.studentmanagement.controllers.LoginController">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: linear-gradient(to right, #667eea, #764ba2);">
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="STUDENT MANAGEMENT SYSTEM" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                <Label text="Login to Continue" style="-fx-text-fill: white; -fx-font-size: 16px;" />
+            </VBox>
+            
+            <VBox alignment="CENTER" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                <Label text="Login" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+                
+                <VBox spacing="10">
+                    <Label text="Username:" style="-fx-font-weight: bold;" />
+                    <TextField fx:id="usernameField" promptText="Enter username" style="-fx-pref-width: 250px;" />
+                </VBox>
+                
+                <VBox spacing="10">
+                    <Label text="Password:" style="-fx-font-weight: bold;" />
+                    <PasswordField fx:id="passwordField" promptText="Enter password" style="-fx-pref-width: 250px;" />
+                </VBox>
+                
+                <Label fx:id="errorLabel" style="-fx-text-fill: red; -fx-font-size: 12px;" visible="false" />
+                
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Login" fx:id="loginButton" onAction="#handleLogin" 
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 100px;" />
+                    <Button text="Clear" onAction="#handleClear" 
+                            style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 100px;" />
+                </HBox>
+                
+                <VBox spacing="5" alignment="CENTER">
+                    <Label text="Default Credentials:" style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+                    <Label text="Admin: admin / admin123" style="-fx-font-size: 11px; -fx-text-fill: #888;" />
+                    <Label text="User: user / user123" style="-fx-font-size: 11px; -fx-text-fill: #888;" />
+                </VBox>
+            </VBox>
+            
+            <Label text="© 2024 Student Management System | APCS Project" 
+                   style="-fx-text-fill: white; -fx-font-size: 12px; -fx-padding: 20;" />
+        </VBox>
+    </center>
+    
+</BorderPane>

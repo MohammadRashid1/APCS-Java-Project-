@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.studentmanagement.controllers.DashboardController">
+    
+    <top>
+        <HBox style="-fx-background-color: #2c3e50; -fx-padding: 15;" alignment="CENTER_LEFT" spacing="20">
+            <Label text="🎓 Student Management System" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="welcomeLabel" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+            <Button text="Logout" fx:id="logoutButton" onAction="#handleLogout" 
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+    
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20;" prefWidth="200">
+            <Button text="Dashboard" style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 160;" />
+            <Button text="Manage Students" fx:id="manageStudentsButton" onAction="#handleManageStudents" 
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 160;" />
+            <Button text="Reports" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 160;" />
+            <Button text="Settings" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 160;" />
+        </VBox>
+    </left>
+    
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <Label text="Dashboard Overview" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            
+            <!-- Statistics Cards -->
+            <GridPane hgap="20" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="200" />
+                    <ColumnConstraints prefWidth="200" />
+                    <ColumnConstraints prefWidth="200" />
+                </columnConstraints>
+                
+                <VBox style="-fx-background-color: #e8f4fd; -fx-background-radius: 10; -fx-padding: 20;" 
+                      alignment="CENTER" spacing="10">
+                    <Label text="👥 Total Students" style="-fx-font-size: 14px; -fx-text-fill: #3498db;" />
+                    <Label fx:id="totalStudentsLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                </VBox>
+                
+                <VBox style="-fx-background-color: #f0f8e8; -fx-background-radius: 10; -fx-padding: 20;" 
+                      alignment="CENTER" spacing="10" GridPane.columnIndex="1">
+                    <Label text="📊 Average GPA" style="-fx-font-size: 14px; -fx-text-fill: #27ae60;" />
+                    <Label fx:id="avgGpaLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                </VBox>
+                
+                <VBox style="-fx-background-color: #fff8e1; -fx-background-radius: 10; -fx-padding: 20;" 
+                      alignment="CENTER" spacing="10" GridPane.columnIndex="2">
+                    <Label text="🎯 Recent Enrollments" style="-fx-font-size: 14px; -fx-text-fill: #f39c12;" />
+                    <Label fx:id="recentEnrollmentsLabel" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                </VBox>
+            </GridPane>
+            
+            <!-- Chart -->
+            <VBox spacing="10">
+                <Label text="Department Distribution" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <BarChart fx:id="departmentChart" prefHeight="300">
+                    <xAxis>
+                        <CategoryAxis label="Department" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Number of Students" />
+                    </yAxis>
+                </BarChart>
+            </VBox>
+            
+            <!-- Quick Actions -->
+            <VBox spacing="10">
+                <Label text="Quick Actions" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <HBox spacing="10">
+                    <Button text="➕ Add New Student" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" />
+                    <Button text="📋 Generate Report" style="-fx-background-color: #9b59b6; -fx-text-fill: white;" />
+                    <Button text="⚙️ System Settings" style="-fx-background-color: #34495e; -fx-text-fill: white;" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox style="-fx-background-color: #ecf0f1; -fx-padding: 10;" alignment="CENTER">
+            <Label text="APCS Semester 1 Project | Student Management System v1.0" 
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" />
+        </HBox>
+    </bottom>
+    
+</BorderPane>
